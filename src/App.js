@@ -10,13 +10,13 @@ const style = {
 };
 
 function App() {
+  const [user] = useAuthState(auth);
+
   return (
     <div className={style.appContainer}>
       <section className={style.sectionContainer}>
-        {/* Navbar component*/}
         <Navbar />
-        {/*Chat component */}
-        <Chat />
+        {user ? <Chat /> : null}
       </section>
     </div>
   );
